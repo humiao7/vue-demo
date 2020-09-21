@@ -1,0 +1,14 @@
+{
+  "name": "fsm-hzero-icons",
+  "homepage": "https://github.com/humiao7/hzero-pc-icons",
+  "_release": "223284ca77",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "223284ca77d1a761cabae6630a352de44be76d5a"
+  },
+  "_source": "https://github.com/humiao7/hzero-pc-icons.git",
+  "_target": "*",
+  "_originalSource": "fsm-hzero-icons",
+  "_direct": true
+}

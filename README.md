@@ -2,16 +2,19 @@
 
 > A Vue.js project
 
-## Build Setup
+## 如何开始
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 安装 hips ui
+npm i @hips/vue-ui -S --registry=http://nexus.saas.hand-china.com/repository/hzero-npm-group/
+
+# 本地 8080 端口启动服务
 npm run dev
 
-# build for production with minification
+# 打包项目
 npm run build
 
 # build for production and view the bundle analyzer report

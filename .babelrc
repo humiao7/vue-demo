@@ -17,6 +17,14 @@
   ],
   "plugins": [
     "transform-vue-jsx",
-    "transform-runtime"
+    "transform-runtime",
+    [
+      "import",
+      {
+        "libraryName": "@hips/vue-ui",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
   ]
 }

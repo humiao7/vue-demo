@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import "./style/fsm-hzero-icons/css/fsm-hzero-icons.css";
 
 Vue.config.productionTip = false
 
