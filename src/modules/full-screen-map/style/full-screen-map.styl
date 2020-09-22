@@ -1,0 +1,131 @@
+.calendar {
+  background #efefef;
+  .fixed-calendar-tools {
+    position: fixed;
+    top: 50px;
+    z-index: 9999;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight bold;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    span {
+      font-weight bold;
+    }
+  }
+
+  .fixed-calendar-label {
+    position: fixed;
+    top: 100px;
+    z-index: 9999;
+    display: flex;
+    width 100%;
+    height: 32px;
+    line-height: 35px;
+    font-size: 14px;
+    background-color: #fff;
+    div {
+      width: calc((100% / 7));
+      text-align: center;
+      color: #666;
+    }
+  }
+
+  .fixed-calendar-content {
+    position: fixed;
+    top: 132px;
+    z-index: 9999;
+    width 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    .hips-calendar__item {
+      width: 14.28571%;
+      text-align: center;
+      padding: .533vw;
+      box-sizing: border-box;
+      background-color: #fff;
+      color: #4a4a4a;
+      .hips-calendar__item__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 13.867vw;
+        flex-wrap: wrap;
+      }
+      .hips-calendar__item-day {
+        height: 4.8vw;
+        width: 4.8vw;
+        border-radius: 100%;
+        border: 1px solid rgba(0, 0, 0, 0);
+        padding: 1.067vw;
+      }
+      .hips-calendar__item-label {
+        font-size 40px;
+        margin: -25px 0 0;
+      }
+    }
+  }
+  >>> .hips-calendar__tool {
+    .hips-icon-arrow-left {
+      padding: 10px 0 10px 20px;
+    }
+    .hips-calendar__current-month {
+      padding: 10px 14px;
+    }
+    .hips-icon-arrow {
+      padding: 10px 20px 10px 0;
+    }
+  }
+  >>> .hips-calendar__item--selected {
+    background #fff;
+    .hips-calendar__item-day {
+      border-radius 50%;
+      color: #fff !important;
+      background #03A9F4;
+    }
+  }
+
+  >>> .hips-calendar__item__wrapper .hips-calendar__item-label {
+    font-size 40px;
+    padding: 0;
+    margin: -10px 0 0;
+  }
+
+  .fixed-tabs {
+    border-top: 10px solid #efefef;
+    position: fixed;
+    top: 188px;
+    z-index: 9999;
+    width 100%;
+  }
+
+  .tabs-multi {
+    background: inherit;
+    >>> .hips-tabs__wrapper {
+      background: #fff;
+      .hips-tabs__wrapper-nav--line {
+        width 60%;
+      }
+    }
+    >>> .hips-tab__panel {
+      width 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .woop-item {
+    width calc(100% - 20px);
+    padding: 10px;
+    border-bottom 1px solid #f9f9f9;
+  }
+
+  >>> .hips-tab--active * {
+    font-weight: 600;
+  }
+}

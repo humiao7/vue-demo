@@ -1,7 +1,7 @@
 <template>
-  <hips-view class="calendar" content-frozen>
-    <hips-nav-bar :back-button="{showLeftArrow: true}" title="日历" type="primary"
-                  @nav-bar-back-click="goBack()"></hips-nav-bar>
+  <hips-view class="calendar" header-height="50" content-frozen>
+    <hips-nav-bar slot="header" :back-button="{showLeftArrow: true}" title="日历"
+                  type="primary" @nav-bar-back-click="goBack()"></hips-nav-bar>
     <div class="fixed-calendar-tools" v-show="showFixToolsAndLabel">
       <span @click="selectDate(30)">2020-09-09</span>
     </div>

@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import "./style/fsm-hzero-icons/css/fsm-hzero-icons.css";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
