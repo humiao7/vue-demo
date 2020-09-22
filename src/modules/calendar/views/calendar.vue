@@ -1,7 +1,7 @@
 <template>
   <hips-view class="calendar" header-height="50" content-frozen>
-    <hips-nav-bar slot="header" :back-button="{showLeftArrow: true}" title="日历"
-                  type="primary" @nav-bar-back-click="goBack()"></hips-nav-bar>
+    <hips-nav-bar slot="header" :back-button="{showLeftArrow: true}" title="日历" type="primary"
+      @nav-bar-back-click="goBack()"></hips-nav-bar>
     <div class="fixed-calendar-tools" v-show="showFixToolsAndLabel">
       <span @click="selectDate(30)">2020-09-09</span>
     </div>
@@ -65,30 +65,23 @@
       </hips-tabs>
     </div>
     <hips-scroll ref="scroll" :scroll-events="['scroll']" :scroll-options="scrollOption" @scroll="scrollHandler">
-      <hips-calendar v-if="showCalendar"
-                     ref="calendar"
-                     select-type="single"
-                     :append-data="appendData">
+      <hips-calendar v-if="showCalendar" ref="calendar" select-type="single" :append-data="appendData">
       </hips-calendar>
       <hips-tabs class="tabs-multi" style="margin: 10px 0 0" v-model="activeTab" swipeable>
         <hips-tab class="tab-item" title="未完结">
-          <halm-task-line class="woop-item"
-                          v-for="(item,index) in list" :key="index"
-                          :icon="item.icon" :iconColor="item.priorityColor" :date="item.lastUpdateDate"
-                          :name="item.woName==item.woopShortName||!item.woopShortName?item.woName:item.woName+':'+item.woopShortName"
-                          :number="item.woNum+'-'+item.woopNum" :status="item.woopStatusMeaning"
-                          :statusClass="item.woopStatus"
-                          :account="item.assetName" :location="item.assetLocationName">
+          <halm-task-line class="woop-item" v-for="(item,index) in list" :key="index" :icon="item.icon"
+            :iconColor="item.priorityColor" :date="item.lastUpdateDate"
+            :name="item.woName==item.woopShortName||!item.woopShortName?item.woName:item.woName+':'+item.woopShortName"
+            :number="item.woNum+'-'+item.woopNum" :status="item.woopStatusMeaning" :statusClass="item.woopStatus"
+            :account="item.assetName" :location="item.assetLocationName">
           </halm-task-line>
         </hips-tab>
         <hips-tab class="tab-item" title="已完成">
-          <halm-task-line class="woop-item"
-                          v-for="(item,index) in list" :key="index"
-                          :icon="item.icon" :iconColor="item.priorityColor" :date="item.lastUpdateDate"
-                          :name="item.woName==item.woopShortName||!item.woopShortName?item.woName:item.woName+':'+item.woopShortName"
-                          :number="item.woNum+'-'+item.woopNum" :status="item.woopStatusMeaning"
-                          :statusClass="item.woopStatus"
-                          :account="item.assetName" :location="item.assetLocationName">
+          <halm-task-line class="woop-item" v-for="(item,index) in list" :key="index" :icon="item.icon"
+            :iconColor="item.priorityColor" :date="item.lastUpdateDate"
+            :name="item.woName==item.woopShortName||!item.woopShortName?item.woName:item.woName+':'+item.woopShortName"
+            :number="item.woNum+'-'+item.woopNum" :status="item.woopStatusMeaning" :statusClass="item.woopStatus"
+            :account="item.assetName" :location="item.assetLocationName">
           </halm-task-line>
         </hips-tab>
       </hips-tabs>
@@ -97,10 +90,21 @@
 </template>
 
 <script>
-  import {View, NavBar, Scroll, Calendar, Tabs, Tab} from '@hips/vue-ui';
-  import {HalmTaskLine} from '@/components';
+  import {
+    View,
+    NavBar,
+    Scroll,
+    Calendar,
+    Tabs,
+    Tab
+  } from '@hips/vue-ui';
+  import {
+    HalmTaskLine
+  } from '@/components';
   import calendarService from '../api';
-  import {dateFormat} from '@/utils'
+  import {
+    dateFormat
+  } from '@/utils'
 
   export default {
     components: {
@@ -125,12 +129,10 @@
 
         list: []
       }
-    }
-    ,
+    },
     created() {
       this.calendarInit();
-    }
-    ,
+    },
     methods: {
       // 返回功能
       goBack() {
@@ -139,10 +141,10 @@
 
       // 日历界面初始化
       calendarInit(initDate = new Date()) {
-        this.showCalendar = false;  // 移除日历组件
+        this.showCalendar = false; // 移除日历组件
         // 日历附加数据
-        let firstDay = new Date(new Date(initDate).getFullYear(), new Date(initDate).getMonth(), 1);  // 当前月份第一天
-        let total = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, 0).getDate();  // 当前月份总天数
+        let firstDay = new Date(new Date(initDate).getFullYear(), new Date(initDate).getMonth(), 1); // 当前月份第一天
+        let total = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, 0).getDate(); // 当前月份总天数
         for (let i = 0; i < total; i++) {
           let date = new Date(firstDay);
           date.setDate(firstDay.getDate() + i);
@@ -169,12 +171,12 @@
         } else {
           this.showFixToolsAndLabel = false;
         }
-        if (-e.y >= 3 * 56) {
+        if (-e.y >= (3 * 56 - 10)) {
           this.showFixContent = true;
         } else {
           this.showFixContent = false;
         }
-        if (-e.y >= 4 * 56) {
+        if (-e.y >= (4 * 56 - 10)) {
           this.showFixTabs = true;
         } else {
           this.showFixTabs = false;
@@ -188,8 +190,10 @@
       }
     }
   }
+
 </script>
 
 <style lang="stylus" scoped>
   @import "../style/calendar.styl";
+
 </style>

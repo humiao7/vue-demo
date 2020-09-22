@@ -1,6 +1,6 @@
-# vue-demo
+# 仿支付宝app前端项目
 
-> A Vue.js project
+> 基于 Vue2.0 开发，功能还在不断完善中。
 
 ## 如何开始
 
@@ -16,9 +16,6 @@ npm run dev
 
 # 打包项目
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
