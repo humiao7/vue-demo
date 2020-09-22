@@ -42,11 +42,18 @@
           <span>{{ item.name }}</span>
         </div>
       </div>
-      <!--轮播图-->
       <div class="card">
-
+        <div class="message-div">
+          <div class="message" style="margin-bottom:10px;">你本次支付获得以下奖励<span>1小时前</span></div>
+          <div class="message">付款成功 ¥100.00<span>1小时前</span></div>
+        </div>
+        <div class="more-div">
+          <div class="dot"></div>
+          <hips-icon name="arrow" color="#aaa" />
+        </div>
       </div>
-      <hips-slide>
+      <!--轮播图-->
+      <hips-slide height="100" loop auto-play>
         <hips-slide-item v-for="(item,index) in slideImages" :key="index">
           <img :src="item.picUrl" style="height: 150px;" />
         </hips-slide-item>
@@ -187,7 +194,7 @@
     methods: {
       loadRefresh() {
         setTimeout(() => {
-
+          this.$refs.scroll.forceUpdate()
         }, 3000)
       },
       loadMore() {
@@ -234,6 +241,7 @@
 
     .search-div {
       flex: 1;
+      overflow: hidden;
     }
   }
 
@@ -243,6 +251,7 @@
     display inline-flex;
     align-items center;
     background: #1677ff;
+    z-index 999;
 
     .top-button {
       flex: 1;
@@ -285,11 +294,41 @@
   }
 
   .card {
-    height 100px;
-    width 94%;
-    margin 10px 3% 0;
-    background #fff;
+    width: calc(96% - 20px);
+    padding: 10px;
+    margin: 10px 2% 0;
+    background: #fff;
     border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+
+    .message-div {
+      flex: 1;
+
+      .message {
+        font-size: 12px;
+        color: #000;
+
+        span {
+          margin 0 0 0 10px;
+          color #aaa;
+        }
+      }
+    }
+
+    .more-div {
+      flex-basis: 10%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: red;
+      }
+    }
   }
 
   .tabbarIcon {
@@ -299,6 +338,13 @@
 
   .hips-tab-bar {
     background #f9f9f9;
+  }
+
+  .hips-slide {
+    width 96%;
+    margin 10px 2% 0;
+    background #fff;
+    border-radius: 5px;
   }
 
 </style>
