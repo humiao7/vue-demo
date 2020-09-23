@@ -1,6 +1,6 @@
 <template>
   <hips-view class="applications" :header-height="50" :sub-header-height="80" :footer-height="48" header-fixed
-    sub-header-fixed content-frozen>
+             sub-header-fixed content-frozen>
     <!--导航栏-->
     <div slot="header" class="nav-bar">
       <div class="nav-button-left">
@@ -8,10 +8,10 @@
         <span>晴 25℃</span>
       </div>
       <div class="search-div">
-        <hips-search placeholder="招商银行 600036.SH" show-clear-button />
+        <hips-search placeholder="招商银行 600036.SH" show-clear-button/>
       </div>
       <div class="nav-button-right">
-        <hips-icon name="add-o" color="#fff" />
+        <hips-icon name="add-o" color="#fff"/>
       </div>
     </div>
     <div slot="sub-header" class="sub-buttons">
@@ -33,11 +33,11 @@
       </div>
     </div>
     <!--滚动部分-->
-    <hips-scroll ref="scroll" :data="modules" :scroll-options="scrollOption" @pulling-down="loadRefresh"
-      @pulling-up="loadMore">
+    <hips-scroll ref="scroll" :data="apps" :scroll-options="scrollOption" @pulling-down="loadRefresh"
+                 @pulling-up="loadMore">
       <div class="sub-apps">
-        <div class="app-item" v-for="(item,index) in modules" :key="index"
-          @click="$router.push({name:`${item.route}`})">
+        <div class="app-item" v-for="(item,index) in apps" :key="index"
+             @click="$router.push({name:`${item.route}`})">
           <i :class="'iconfont '+item.icon" :style="{color:item.color}"></i>
           <span>{{ item.name }}</span>
         </div>
@@ -49,53 +49,29 @@
         </div>
         <div class="more-div">
           <div class="dot"></div>
-          <hips-icon name="arrow" color="#aaa" />
+          <hips-icon name="arrow" color="#aaa"/>
         </div>
       </div>
       <!--轮播图-->
       <hips-slide height="100" loop auto-play>
         <hips-slide-item v-for="(item,index) in slideImages" :key="index">
-          <img :src="item.picUrl" style="height: 150px;" />
+          <img :src="item.picUrl" style="height: 150px;"/>
         </hips-slide-item>
       </hips-slide>
     </hips-scroll>
-    <!--底部菜单栏-->
-    <hips-tab-bar slot="footer" v-model="activeTab">
-      <hips-tab-bar-item v-for="(tab,index) in tabbars" :key="index" :dot="tab.showDot" :badge-value="tab.badgeValue">
-        <span>{{tab.name}}</span>
-        <img slot="icon" class="tabbarIcon" :src="activeTab===index ? tab.icon.active : tab.icon.normal" />
-      </hips-tab-bar-item>
-    </hips-tab-bar>
+    <div slot="footer" class="footer-placehoder"></div>
   </hips-view>
 </template>
 
 <script>
-  import {
-    View,
-    Scroll,
-    TabBar,
-    TabBarItem,
-    Slide,
-    SlideItem,
-    Search,
-    Icon
-  } from '@hips/vue-ui';
-  import homeNormal from '../static/home.svg';
-  import homeActive from '../static/home-fill.svg';
-  import messageNormal from '../static/message.svg';
-  import messageActive from '../static/message-fill.svg';
-  import shopCarNormal from '../static/shopcar.svg';
-  import shopCarActive from '../static/shopcar-fill.svg';
-  import mineNormal from '../static/mine.svg';
-  import mineActive from '../static/mine-fill.svg';
+  import {View, Scroll, Slide, SlideItem, Search, Icon} from '@hips/vue-ui';
+  import {applicationsService} from "../api"
 
   export default {
-    name: "Applications",
+    name: "applications",
     components: {
       [View.name]: View,
       [Scroll.name]: Scroll,
-      [TabBar.name]: TabBar,
-      [TabBarItem.name]: TabBarItem,
       [Slide.name]: Slide,
       [SlideItem.name]: SlideItem,
       [Search.name]: Search,
@@ -103,80 +79,23 @@
     },
     data() {
       return {
-        activeTab: 0,
         slideImages: [{
-            linkUrl: 'http://y.qq.com/w/album.html?albummid=0044K2vN1sT5mE',
-            picUrl: 'http://y.gtimg.cn/music/photo_new/T003R720x288M000001YCZlY3aBifi.jpg',
-          },
+          linkUrl: 'http://y.qq.com/w/album.html?albummid=0044K2vN1sT5mE',
+          picUrl: 'http://y.gtimg.cn/music/photo_new/T003R720x288M000001YCZlY3aBifi.jpg',
+        },
           {
             linkUrl: 'https://y.qq.com/m/digitalbum/gold/index.html?_video=true&id=2197820&g_f=shoujijiaodian',
             picUrl: 'http://y.gtimg.cn/music/photo_new/T003R720x288M000004ckGfg3zaho0.jpg',
           },
         ],
-        modules: [{
-          name: '日历',
-          color: '#2a83fe',
-          icon: "icon-calendar1",
-          route: 'calendar'
-        }, {
-          name: '地图',
-          color: '#fea917',
-          icon: "icon-huititle",
-          route: 'FullScreenMap'
-        }, {
-          name: '附件',
-          color: '#fd5f10',
-          icon: "icon-text",
-          route: 'calendar'
-        }, {
-          name: '图表',
-          color: '#00b478',
-          icon: "icon-barchart",
-          route: 'calendar'
-        }, {
-          name: '列表',
-          color: '#ed4112',
-          icon: "icon-classification",
-          route: 'calendar'
-        }, {
+        apps: [{
           name: '全部',
           color: '#aaa',
           icon: "icon-more",
           route: 'calendar'
         }],
-        tabbars: [{
-          name: "首页",
-          showDot: false,
-          icon: {
-            normal: homeNormal,
-            active: homeActive,
-          }
-        }, {
-          name: "消息",
-          badgeValue: "110",
-          showDot: false,
-          icon: {
-            normal: messageNormal,
-            active: messageActive,
-          }
-        }, {
-          name: "购物车",
-          badgeValue: "0",
-          showDot: true,
-          icon: {
-            normal: shopCarNormal,
-            active: shopCarActive,
-          }
-        }, {
-          name: "我的",
-          badgeValue: "0",
-          showDot: true,
-          icon: {
-            normal: mineNormal,
-            active: mineActive,
-          }
-        }],
-        scrollOption: { //滚动加载的配置
+        //滚动加载的配置
+        scrollOption: {
           pullDownRefresh: {
             threshold: 60, // 触发 pullingDown 的距离
             stop: 40, // pullingDown 正在刷新 hold 时的距离
@@ -191,10 +110,13 @@
         }
       };
     },
+    mounted() {
+      this.apps = [...applicationsService.getAppList(), ...this.apps];
+    },
     methods: {
       loadRefresh() {
         setTimeout(() => {
-          this.$refs.scroll.forceUpdate()
+          this.$refs.scroll.forceUpdate();
         }, 3000)
       },
       loadMore() {
@@ -331,20 +253,15 @@
     }
   }
 
-  .tabbarIcon {
-    width: 25px;
-    height: 25px;
-  }
-
-  .hips-tab-bar {
-    background #f9f9f9;
-  }
-
   .hips-slide {
     width 96%;
     margin 10px 2% 0;
     background #fff;
     border-radius: 5px;
+  }
+
+  >>> .hips-view__footer {
+    display none;
   }
 
 </style>

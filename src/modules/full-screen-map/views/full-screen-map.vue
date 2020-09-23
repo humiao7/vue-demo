@@ -2,9 +2,9 @@
   <hips-view class="full-screen-map">
     <div class="nav-tools">
       <i class="hips-icon hips-icon-arrow-left" @click="goBack"></i>
-      <img src="../../../../static/head.svg">
+      <img src="../static/head.svg">
       <div class="address">地址</div>
-      <img src="../../../../static/robot.svg"/>
+      <img src="../static/robot.svg"/>
     </div>
     <baidu-map id="baiduMap"
                ak="CAyKrU9jUfMsrmeiOehsZtcUvYnNkRIG"

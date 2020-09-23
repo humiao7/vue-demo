@@ -1,21 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Application from '../applications'
+
 
 Vue.use(Router);
 
 let routes = [];
 
 const apps = [
+  "tabs",
   "calendar",
   "full-screen-map"
 ];
-const applicationRoute = {
-  path: "/applications",
-  name: "applications",
-  component: require("../applications").default
-};
-routes.push(applicationRoute);
 apps.map(app => {
   routes.push(...require(`@/modules/${app}/router`).default);
 });
