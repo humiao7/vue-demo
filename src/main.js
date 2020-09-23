@@ -6,6 +6,7 @@ import router from './router'
 import "./style/theme.styl"
 import "./style/common.styl"
 import "./style/fsm-hzero-icons/css/fsm-hzero-icons.css";
+import "./style/Iconfont/iconfont.css";
 
 Vue.config.productionTip = false;
 
