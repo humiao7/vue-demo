@@ -18,4 +18,7 @@ npm run dev
 npm run build
 ```
 
+## 在线体验
+ [在线体验](https://humiao7.github.io/vue-demo.github.io/#/tabs) （ 请使用 Chrome，F12打开调试模式并选择移动布局进行体验 ）
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
