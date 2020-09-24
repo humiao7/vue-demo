@@ -1,6 +1,6 @@
 <template>
   <hips-view class="calendar" header-height="50" content-frozen>
-    <hips-nav-bar slot="header" :back-button="{showLeftArrow: true}" title="日历" type="primary"
+    <hips-nav-bar slot="header" :back-button="{showLeftArrow: true}" title="工作日历" type="primary"
                   @nav-bar-back-click="goBack()"></hips-nav-bar>
     <div class="fixed-calendar-tools" v-show="showFixToolsAndLabel">
       <span style="font-weight: bold;">{{selectedDate}}</span>

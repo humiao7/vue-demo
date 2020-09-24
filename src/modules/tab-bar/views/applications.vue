@@ -92,7 +92,7 @@
           name: '全部',
           color: '#aaa',
           icon: "icon-more",
-          route: 'calendar'
+          route: '404'
         }],
         //滚动加载的配置
         scrollOption: {

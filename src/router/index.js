@@ -7,9 +7,17 @@ Vue.use(Router);
 let routes = [];
 
 const apps = [
+  "tab-bar",
+  "forms",
+  "lists",
+  "notes",
   "tabs",
+  "waterfall",
+  "charts",
   "calendar",
-  "full-screen-map"
+  "files",
+  "map",
+  "page-404"
 ];
 apps.map(app => {
   routes.push(...require(`@/modules/${app}/router`).default);

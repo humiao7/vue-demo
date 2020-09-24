@@ -1,5 +1,5 @@
 <template>
-  <hips-view class="full-screen-map">
+  <hips-view class="map">
     <div class="nav-tools">
       <i class="hips-icon hips-icon-arrow-left" @click="goBack"></i>
       <img src="../static/head.svg">
@@ -21,7 +21,7 @@
   import {BaiduMap, BmMarker, BmInfoWindow, BmNavigation, BmScale} from 'vue-baidu-map/components';
 
   export default {
-    name: "full-screen-map",
+    name: "map",
     components: {
       [View.name]: View,
       BaiduMap,
@@ -43,7 +43,7 @@
 </script>
 
 <style scoped lang="stylus">
-  .full-screen-map {
+  .map {
     width 100vw;
     height 100vh;
 
