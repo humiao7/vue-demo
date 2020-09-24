@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "@hips/vue-ui": "^0.4.52",
+    "@hips/vue-ui": "^0.4.42",
     "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
     "vue": "^2.5.2",
