@@ -47,7 +47,7 @@
           <img src="../assets/camera.svg">
           <span>拍照</span>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" @click="openFolder">
           <img src="../assets/folder.svg">
           <span>文件</span>
         </div>
@@ -171,10 +171,17 @@
 
       openAlbum() {
         this.showUploadPopup = false;
+        // TODO 打开相册
       },
 
       openCamera() {
         this.showUploadPopup = false;
+        // TODO 打开相机
+      },
+
+      openFolder() {
+        this.showUploadPopup = false;
+        // TODO 打开文件管理
       },
 
       base64ToBlob(dataurl) {

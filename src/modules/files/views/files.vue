@@ -4,9 +4,12 @@
     <hips-nav-bar slot="header" :back-button="{showLeftArrow: true}" title="文件管理" @nav-bar-back-click="goBack()"/>
     <hips-scroll ref="scroll" :scroll-options="{}">
       <div class="file-content">
-        <halm-file-group class="file-panel" show-date="2020-09-25" title="春游照片" can-upload-file></halm-file-group>
-        <halm-file-group class="file-panel" show-date="2020-09-20" title="周会记录"></halm-file-group>
-        <halm-file-group class="file-panel" show-date="2020-08-18" title="客户会议"></halm-file-group>
+        <halm-file-group class="file-panel" show-date="2020-09-25 09:35:24" title="春游照片"
+                         can-upload-file></halm-file-group>
+        <halm-file-group class="file-panel" show-date="2020-09-20 13:25:08" title="周会记录"></halm-file-group>
+        <halm-file-group class="file-panel" show-date="2020-08-18 20:42:53" title="客户会议"
+                         can-upload-file></halm-file-group>
+        <halm-file-group class="file-panel" show-date="2020-06-30 10:50:53" title="毕业典礼"></halm-file-group>
       </div>
     </hips-scroll>
   </hips-view>
