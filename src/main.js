@@ -8,7 +8,13 @@ import "./style/common.styl"
 import "./style/fsm-hzero-icons/css/fsm-hzero-icons.css";
 import "./style/Iconfont/iconfont.css";
 
+import 'x-photoswipe/dist/photoswipe.css'
+import 'x-photoswipe/dist/default-skin/default-skin.css'
+import {Previewer} from "@hips/vue-ui";
+Vue.use(Previewer);
+
 Vue.config.productionTip = false;
+
 
 /* eslint-disable no-new */
 new Vue({

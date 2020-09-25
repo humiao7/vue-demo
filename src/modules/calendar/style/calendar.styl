@@ -2,7 +2,7 @@
   background #efefef;
   .fixed-calendar-tools {
     position: fixed;
-    top: 50px;
+    top: 48px;
     z-index: 9999;
     height: 50px;
     width: 100%;
@@ -17,7 +17,7 @@
 
   .fixed-calendar-label {
     position: fixed;
-    top: 100px;
+    top: 98px;
     z-index: 9999;
     display: flex;
     width 100%;
@@ -62,7 +62,7 @@
         padding: 1.067vw;
       }
       .hips-calendar__item-day-active {
-        color #fff;
+        color #fff !important;
         background: #03a9f4;
       }
       .hips-calendar__item-label {
@@ -108,7 +108,7 @@
   .fixed-tabs {
     border-top: 10px solid #efefef;
     position: fixed;
-    top: 186px;
+    top: 184px;
     z-index: 9999;
     width 100%;
     background #fff;
@@ -134,4 +134,13 @@
     padding: 10px;
     border-bottom 1px solid #f9f9f9;
   }
+}
+
+>>> .tabs-multi .hips-tabs__wrapper .hips-tabs__wrapper-nav--line {
+  width 40% !important;
+}
+
+>>> .hips-tab--active *{
+  font-size 14px;
+  font-weight: bold !important;
 }

@@ -290,4 +290,114 @@
   .list-item-padding {
     padding: 3px 0;
   }
+
+  /*动态着色标签-单据状态，包括SR、WO*/
+  .color_doc_status_DRAFT {
+    background-color: #f2efe6; /*灰偏土黄*/
+  }
+
+  .color_doc_status_SUBMITTED {
+    background-color: #f1f3de; /*淡黄绿*/
+  }
+
+  .color_doc_status_APPROVED {
+    background-color: #dee8f3; /*亮蓝*/
+  }
+
+  .color_doc_status_INPRG {
+    background-color: #def3e6; /*亮绿*/
+  }
+
+  .color_doc_status_REJECTED {
+    background-color: #ddc5b4; /*淡黄*/
+  }
+
+  .color_doc_status_CANCELED {
+    background-color: #e0e0e0; /*灰*/
+  }
+
+  .color_doc_status_CLOSED {
+    background-color: #c9e6d2; /*灰绿*/
+  }
+
+  .color_doc_status_WSCH {
+    background-color: #dbddab; /*淡黄*/
+  }
+
+  .color_doc_status_WMATL {
+    background-color: #f1f2df; /*淡黄*/
+  }
+
+  .color_doc_status_WPCOND {
+    background-color: #ffe0aa; /*淡黄*/
+  }
+
+  .color_doc_status_WPREV {
+    background-color: #d0f5f4; /*蓝*/
+  }
+
+  .color_doc_status_COMPLETED {
+    background-color: #c0f9ff; /*中绿*/
+  }
+
+  .color_doc_status_REWORK {
+    background-color: #efddff; /*紫色*/
+  }
+
+  .color_doc_status_RETURNED {
+    background-color: #ffaaaa; /*亮黄*/
+  }
+
+  .color_doc_status_PAUSE {
+    background-color: #ff8d7e; /*亮红*/
+  }
+
+  .color_doc_status_PRECLOSED {
+    background-color: #e0ffea; /*亮红*/
+  }
+
+  .color_doc_status_WRD {
+    background-color: #f3dede; /*亮红*/
+  }
+
+  .color_doc_status_UNABLE {
+    background-color: #bec2d7;
+  }
+
+  // 资产不同的状态对应不同的颜色
+  .color_asset_status_Ordered {
+    background-color: #dee8f3; /*蓝绿*/
+  }
+
+  .color_asset_status_RECEIVED {
+    background-color: #91E9ED; /*亮蓝*/
+  }
+
+  .color_asset_status_PRE_ASSIGNED {
+    background-color: #f1f3de; /*亮绿*/
+  }
+
+  .color_asset_status_IN_SERVICE {
+    background-color: #dcf3e5; /*淡绿*/
+  }
+
+  .color_asset_status_IDLE {
+    background-color: #fffad0; /*淡黄*/
+  }
+
+  .color_asset_status_STOCKED {
+    background-color: #f2efe6; /*灰偏土黄*/
+  }
+
+  .color_asset_status_TEMP_OUT {
+    background-color: #dbc7ff; /*紫色*/
+  }
+
+  .color_asset_status_OUT_OF_SERVICE {
+    background-color: #dbdbdb; /*灰*/
+  }
+
+  .color_asset_status_LOST {
+    background-color: #b4b4b4; /*深灰*/
+  }
 </style>

@@ -20,8 +20,8 @@
       <div v-for="item in weekDayList" @click="selectWeekDate(item.index)"
            class="hips-calendar__item">
         <div class="hips-calendar__item__wrapper" v-show="item.visible">
-          <div
-            :class="item.selected?'hips-calendar__item-day hips-calendar__item-day-active':'hips-calendar__item-day'">
+          <div :style="{color:item.dateLabel==='今'?'#1f8ceb':'#4a4a4a'}"
+               :class="item.selected?'hips-calendar__item-day hips-calendar__item-day-active':'hips-calendar__item-day'">
             {{item.dateLabel}}
           </div>
           <div class="hips-calendar__item-label" style="color: rgb(249, 111, 104);">{{item.label}}</div>
@@ -138,7 +138,7 @@
           let format = dateFormat(date, 'yyyy-MM-dd');
           this.appendData.push({
             date: format,
-            label: '·',
+            label: Math.random() * 100 < 50 ? '·' : '',
             labelColor: '#f96f68'
           });
         }
@@ -223,12 +223,12 @@
         } else {
           this.showFixToolsAndLabel = false;
         }
-        if (-e.y >= ((this.weekSerialNumber - 1) * 56)) {
+        if (-e.y > 0 && -e.y >= ((this.weekSerialNumber - 1) * 56) - 10) {
           this.showFixContent = true;
         } else {
           this.showFixContent = false;
         }
-        if (-e.y >= (4 * 56)) {
+        if (-e.y >= 4 * 56) {
           this.showFixTabs = true;
         } else {
           this.showFixTabs = false;

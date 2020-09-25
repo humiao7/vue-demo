@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2742648",
+      "name": "名片",
+      "font_class": "mingpian",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "6987035",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e92f",
+      "unicode_decimal": 59695
+    },
+    {
+      "icon_id": "14343651",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "16618139",
+      "name": "collection",
+      "font_class": "collection",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
+      "icon_id": "16617921",
+      "name": "bulletin",
+      "font_class": "bulletin",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "16618688",
+      "name": "good",
+      "font_class": "good",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "16550490",
+      "name": "pie chart_2",
+      "font_class": "piechart_2",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "16618563",
+      "name": "fill in",
+      "font_class": "fillin",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
       "icon_id": "16617893",
       "name": "bar chart",
       "font_class": "barchart",

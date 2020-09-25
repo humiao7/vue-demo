@@ -18,7 +18,9 @@ npm run dev
 npm run build
 ```
 
-## 在线体验
- [立即体验](https://humiao7.github.io/vue-demo.github.io/#/tabs) 
+## 立即体验
+ [在线体验](https://humiao7.github.io/vue-demo.github.io/#/tab-bar)
+
+ [下载 APP](https://www.pgyer.com/DPPU)
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
