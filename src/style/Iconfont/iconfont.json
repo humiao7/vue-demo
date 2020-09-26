@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "577372",
+      "name": "天猫",
+      "font_class": "tianmao",
+      "unicode": "e757",
+      "unicode_decimal": 59223
+    },
+    {
       "icon_id": "2742648",
       "name": "名片",
       "font_class": "mingpian",
