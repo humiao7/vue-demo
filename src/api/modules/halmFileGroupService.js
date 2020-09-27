@@ -28,12 +28,12 @@ const halmFileGroupService = {
     }, {
       "fileId": 96567683511881728,
       "fileName": "风景.jpeg",
-      "fileUrl": "https://c-ssl.duitang.com/uploads/item/202002/24/20200224130913_uUtrt.jpeg",
+      "fileUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601195110327&di=1571742eafad4fd89698fce992c39a91&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201709%2F07%2F20170907102752_kAmh5.thumb.700_0.jpeg",
       "fileExistFlag": 1
     }, {
       "fileId": 96567685051191296,
       "fileName": "哈尔的移动城堡.jpg",
-      "fileUrl": "https://c-ssl.duitang.com/uploads/item/202006/22/20200622231049_rnoyq.thumb.700_0.jpg",
+      "fileUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1399197996,217800041&fm=26&gp=0.jpg",
       "fileExistFlag": 1
     }]
   }

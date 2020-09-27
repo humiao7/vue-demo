@@ -3,22 +3,34 @@
     <div class="nav-tools">
       <i class="hips-icon hips-icon-arrow-left" @click="goBack"></i>
       <img src="../static/head.svg">
-      <div class="address">地址</div>
+      <div class="address">湖南省长沙市岳麓区</div>
       <img src="../static/robot.svg"/>
     </div>
-    <baidu-map id="baiduMap"
-               ak="CAyKrU9jUfMsrmeiOehsZtcUvYnNkRIG"
-               :center=" {lng:121.156485, lat:31.16797}" :zoom="17">
-      <bm-marker :position="{lng:121.339039, lat:31.194474}"/>
+    <baidu-map id="baiduMap" ak="CAyKrU9jUfMsrmeiOehsZtcUvYnNkRIG" :center="{lng:112.945308, lat:28.234684}" :zoom="17">
       <bm-scale anchor="BMAP_ANCHOR_BOTTOM_LEFT"></bm-scale>
+      <bm-marker :position="{lng:112.945308, lat:28.234684}"/>
+      <bm-marker :position="{lng:112.945608, lat:28.231084}"/>
+      <bm-circle :center="{lng:112.945308, lat:28.234684}" :radius="200" fill-color="#ff5722" :fill-opacity="0.3"
+                 stroke-color="#ff5722" :stroke-opacity="0.8" :stroke-weight="2"></bm-circle>
       <bm-navigation anchor="BMAP_ANCHOR_BOTTOM_RIGHT"></bm-navigation>
+      <bm-geolocation anchor="BMAP_ANCHOR_BOTTOM_LEFT" :showAddressBar="true" :autoLocation="true"></bm-geolocation>
+      <bm-polyline :path="[{lng:112.945308, lat:28.234684},{lng:112.945608, lat:28.231084}]" stroke-color="blue"
+                   :stroke-opacity="0.5" :stroke-weight="2"></bm-polyline>
     </baidu-map>
   </hips-view>
 </template>
 
 <script>
   import {View} from '@hips/vue-ui';
-  import {BaiduMap, BmMarker, BmInfoWindow, BmNavigation, BmScale} from 'vue-baidu-map/components';
+  import {
+    BaiduMap,
+    BmMarker,
+    BmNavigation,
+    BmGeolocation,
+    BmScale,
+    BmCircle,
+    BmPolyline
+  } from 'vue-baidu-map/components';
 
   export default {
     name: "map",
@@ -26,9 +38,11 @@
       [View.name]: View,
       BaiduMap,
       BmMarker,
-      BmInfoWindow,
       BmNavigation,
-      BmScale
+      BmGeolocation,
+      BmScale,
+      BmCircle,
+      BmPolyline
     },
     data() {
       return {}
