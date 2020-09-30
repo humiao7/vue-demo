@@ -10,8 +10,14 @@ import "./style/Iconfont/iconfont.css";
 
 import 'x-photoswipe/dist/photoswipe.css'
 import 'x-photoswipe/dist/default-skin/default-skin.css'
-import {Previewer} from "@hips/vue-ui";
+import {Previewer, Actionsheet, Toast, Notify, Indicator, Dialog} from "@hips/vue-ui";
+
 Vue.use(Previewer);
+Vue.use(Actionsheet);
+Vue.use(Toast);
+Vue.use(Notify);
+Vue.use(Indicator);
+Vue.use(Dialog);
 
 Vue.config.productionTip = false;
 
@@ -20,6 +26,6 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })
