@@ -2,16 +2,16 @@
   <hips-view class="waterfall" :header-height="50" :footer-height="48" header-fixed content-frozen>
     <!--导航栏-->
     <hips-nav-bar :back-button="{showLeftArrow: true}" title="瀑布流" @nav-bar-back-click="goBack()"/>
-    <hips-scroll ref="scroll" :data="[wrapperList]" :scroll-options="scrollOption" @pulling-down="refreshList"
-                 @pulling-up="loadMoreList">
+    <hips-scroll ref="scroll" :data="[imageList]" :scroll-options="scrollOption" @pulling-down="refreshList"
+                 @pulling-up="loadMoreList()">
       <div class="waterfall-list">
         <div class="fall-list" ref="fallList1">
-          <div class="fall-item" v-for="item in data1">
+          <div class="fall-item" v-for="item in list1">
             <img :src="item">
           </div>
         </div>
         <div class="fall-list" ref="fallList2">
-          <div class="fall-item" v-for="item in data2">
+          <div class="fall-item" v-for="item in list2">
             <img :src="item">
           </div>
         </div>
@@ -48,8 +48,10 @@
           }
         },
         page: 0,
-        data1: [],
-        data2: [],
+        imageList: [],
+        list1: [],
+        list2: [],
+        sortIngFlag: false,
       }
     },
     mounted() {
@@ -64,32 +66,32 @@
       // 下拉刷新
       refreshList() {
         this.page = 0;
-        this.data1 = [];
-        this.data2 = [];
+        this.imageList = [];
+        this.list1 = [];
+        this.list2 = [];
+        this.sortIngFlag = false;
         this.loadMoreList();
       },
 
       // 获取图片数据
-      async loadMoreList() {
-        this.throttle(async () => {
-          let res = await waterfallService.getImageList();
+      loadMoreList() {
+        if (!this.sortIngFlag) {
+          console.log(`page : ${this.page}`);
+          let res = waterfallService.getImageList();
+          this.imageList = this.imageList.concat(res);
           this.page++;
           this.doSort(0, res);
-          if (this.page >= 5) {
-            this.$nextTick(() => {
-              this.$refs.scroll.forceUpdate();
-            })
-          }
-        })
+        }
       },
 
       // 图片排序
       doSort(index, list) {
         if (index < list.length) {
+          this.sortIngFlag = true;
           if (this.$refs.fallList1.clientHeight <= this.$refs.fallList2.clientHeight) {
-            this.data1.push(list[index]);
+            this.list1.push(list[index]);
           } else {
-            this.data2.push(list[index]);
+            this.list2.push(list[index]);
           }
           let that = this;
           this.$nextTick(() => {
@@ -97,21 +99,29 @@
               that.doSort(index + 1, list);
             }, 400);
           })
+        } else {
+          this.sortIngFlag = false;
+          if (this.page >= 3) {
+            this.$nextTick(() => {
+              this.$refs.scroll.forceUpdate();
+            });
+          }
         }
       },
 
-      // 函数节流
-      throttle(method, context) {
-        clearTimeout(method.tId);
-        method.tId = setTimeout(function () {
-          method.call(context);
-        }, 500)
-      }
-    },
-    computed: {
-      wrapperList() {
-        return [...this.data1, ...this.data2] // 请注意，在computed里面 包裹下list， 只有在特殊情况下，这么使用
-      }
+      // 节流设置
+      throttle(fn, wait) {
+        var pre = Date.now();
+        return function () {
+          var context = this;
+          var args = arguments;
+          var now = Date.now();
+          if (now - pre >= wait) {
+            fn.apply(context, args);
+            pre = Date.now();
+          }
+        }
+      },
     }
   }
 </script>
