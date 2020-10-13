@@ -17,6 +17,7 @@ const apps = [
   "calendar",
   "files",
   "map",
+  "payment",
   "page-404"
 ];
 apps.map(app => {

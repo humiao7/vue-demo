@@ -19,8 +19,8 @@
         <i class="iconfont icon-scan"></i>
         <span>扫一扫</span>
       </div>
-      <div class="top-button">
-        <i class="iconfont icon-pay"></i>
+      <div class="top-button" @click="$router.push({name:'payment'})">
+        <i class="iconfont icon-pay_collect"></i>
         <span>付钱/收钱</span>
       </div>
       <div class="top-button">

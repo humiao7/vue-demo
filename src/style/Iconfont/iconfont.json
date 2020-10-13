@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "16617548",
+      "name": "pay_collect",
+      "font_class": "pay_collect",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "16617418",
+      "name": "collect",
+      "font_class": "collect",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "16617539",
+      "name": "bus code",
+      "font_class": "buscode",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "1214984",
+      "name": "余额宝",
+      "font_class": "yuebao",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
       "icon_id": "577372",
       "name": "天猫",
       "font_class": "tianmao",
