@@ -4,7 +4,7 @@
     <hips-nav-bar slot="header" title="我的" :right-buttons="[{buttonIcon: '',buttonLabel: '设置'}]"/>
     <!--滚动部分-->
     <hips-scroll ref="scroll" :scroll-options="{}">
-      <div class="my-information">
+      <div class="my-information" @click="$router.push({name:'my-information'})">
         <div class="header-box">
           <img src="../static/user-header.jpg">
           <div class="level-icon">

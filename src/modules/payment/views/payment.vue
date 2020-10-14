@@ -13,13 +13,13 @@
           <hips-icon name="more-1" color="#aaa" :size="26"/>
         </div>
         <div class="bar-code">
-          <barcode :value="paymentIdCode" font-options="bold" :display-value="false">
+          <barcode :value="randNumber+'Hello Vue'" font-options="bold" :display-value="false">
             Can't generate the barcode
           </barcode>
         </div>
-        <div class="payment-id-dis">2549 ****** 查看数字</div>
+        <div class="payment-id-dis">{{randNumber}} ****** 查看数字</div>
         <div class="qrcode">
-          <vue-qr :text="paymentIdCode" :margin="0" colorDark="#000" colorLight="#fff" :logoSrc="logoIcon"
+          <vue-qr :text="randNumber+'Hello Vue'" :margin="0" colorDark="#000" colorLight="#fff" :logoSrc="logoIcon"
                   :size="200"></vue-qr>
         </div>
         <div class="pay-ways">
@@ -70,7 +70,7 @@
     },
     data() {
       return {
-        paymentIdCode: "Hello Vue!",
+        randNumber: '0000',
         logoIcon: logoIcon,
         timeInterval: null
       }
@@ -92,7 +92,7 @@
       },
       // 刷新支付码
       refreshPaymentId() {
-        this.paymentIdCode = "Hello Vue" + Math.floor(Math.random() * 100)
+        this.randNumber = Math.floor(Math.random() * 10000) + '';
       }
     }
   }

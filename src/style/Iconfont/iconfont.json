@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1526413",
+      "name": "图表-饼图",
+      "font_class": "tubiao-bingtu",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "1680708",
+      "name": "图表统计",
+      "font_class": "tubiaotongji",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "1881564",
+      "name": "K线图",
+      "font_class": "Kxiantu",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "1881571",
+      "name": "雷达图",
+      "font_class": "leidatu",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "1881573",
+      "name": "散点图",
+      "font_class": "sandiantu",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "5979975",
+      "name": "图表-01",
+      "font_class": "tubiao-",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
       "icon_id": "16617548",
       "name": "pay_collect",
       "font_class": "pay_collect",

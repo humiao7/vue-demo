@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hips/vue-ui": "^0.4.42",
+    "echarts": "^4.9.0",
     "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
     "vue": "^2.5.2",
