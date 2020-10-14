@@ -39,13 +39,13 @@
       this.activeChart = 0;
       this.chartList = this.chartList.concat(chartService.getChartsList());
     },
-    mounted() {
+    activated() {
       this.drawChart(this.activeChart);
       this.timeInterval = setInterval(() => {
         this.drawChart((this.activeChart + 1) % 5);
       }, 5000)
     },
-    destroyed() {
+    deactivated() {
       console.log("清除定时器");
       clearInterval(this.timeInterval)
     },

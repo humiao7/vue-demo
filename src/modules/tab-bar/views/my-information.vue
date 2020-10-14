@@ -46,6 +46,7 @@
               {name: 'Vue', max: 100},
               {name: 'React', max: 100},
               {name: 'Angular', max: 100},
+              {name: '小程序', max: 100},
               {name: 'Webpack', max: 100},
               {name: 'Gulp', max: 100},
               {name: 'TypeScript', max: 100},
@@ -59,7 +60,7 @@
             type: 'radar',
             data: [
               {
-                value: [95, 90, 93, 95, 80, 60, 77, 85, 85, 70],
+                value: [95, 90, 93, 95, 80, 60, 85, 77, 85, 85, 70],
                 name: '前端开发技能',
               }
             ],

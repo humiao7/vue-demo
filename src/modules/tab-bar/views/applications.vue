@@ -15,7 +15,7 @@
       </div>
     </div>
     <div slot="sub-header" class="sub-buttons">
-      <div class="top-button">
+      <div class="top-button" @click="scanQrCode">
         <i class="iconfont icon-scan"></i>
         <span>扫一扫</span>
       </div>
@@ -125,6 +125,18 @@
             this.$refs.scroll.forceUpdate()
           }, 3000)
         })
+      },
+      // 扫码二维码
+      scanQrCode() {
+        this.$hips.dialog.alert({
+          title: '提示',
+          content: '相机调用失败，请前往移动端体验完整功能',
+          okText: '确定',
+          closable: false,
+          onOk() {
+            // on OK
+          },
+        });
       }
     },
   };

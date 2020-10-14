@@ -75,13 +75,13 @@
         timeInterval: null
       }
     },
-    mounted() {
+    activated() {
       this.timeInterval = setInterval(() => {
         console.log("刷新");
         this.refreshPaymentId();
       }, 5000)
     },
-    destroyed() {
+    deactivated() {
       console.log("清除定时器");
       clearInterval(this.timeInterval)
     },
