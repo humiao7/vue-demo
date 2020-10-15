@@ -34,7 +34,7 @@
       <div class="other-card">
         <div class="other-item" style="border: none;">
           <i class="iconfont icon-collect"></i>
-          <div class="other-name">收款</div>
+          <div class="other-name">收钱</div>
           <hips-icon name="arrow" color="#fff"/>
         </div>
         <div class="other-item">

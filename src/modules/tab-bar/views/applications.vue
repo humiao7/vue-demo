@@ -23,11 +23,11 @@
         <i class="iconfont icon-pay_collect"></i>
         <span>付钱/收钱</span>
       </div>
-      <div class="top-button">
+      <div class="top-button" @click="showNotes">
         <i class="iconfont icon-travel"></i>
         <span>出行</span>
       </div>
-      <div class="top-button">
+      <div class="top-button" @click="showNotes">
         <i class="iconfont icon-card"></i>
         <span>卡包</span>
       </div>
@@ -156,6 +156,18 @@
             }
           )
         }
+      },
+
+      showNotes(){
+        this.$hips.dialog.alert({
+          title: '─=≡Σ(((つ•̀ω•́)つ',
+          content: '额。。。这个功能暂时木有做哦',
+          okText: '确定',
+          closable: false,
+          onOk() {
+            // on OK
+          },
+        });
       }
     },
   };

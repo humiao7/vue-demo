@@ -3,12 +3,13 @@
     <!--导航栏-->
     <hips-nav-bar slot="header" :back-button="{showLeftArrow: true}" title="设置" @nav-bar-back-click="goBack()"/>
     <hips-scroll ref="scroll" :scroll-options="{}">
-      <hips-switch-cell class="forms-line" v-model="pushModel" title="消息通知"/>
+      <hips-switch-cell class="forms-line" v-model="pushModel" @change="pushModelChange" title="消息通知"/>
+      <hips-switch-cell class="forms-line" v-model="easyLogin" @change="easyLoginChange" title="指纹登陆"/>
     </hips-scroll>
     <div slot="footer">
-      <div class="footer">
+      <div class="footer" @click="logoutApp">
         <hips-icon name="logout" color="#f97a74" :size="25"/>
-        <div class="logout-title" @click="logoutApp">退出登录</div>
+        <div class="logout-title">退出登录</div>
       </div>
     </div>
   </hips-view>
@@ -28,7 +29,23 @@
     },
     data() {
       return {
-        pushModel: false
+        pushModel: false,
+        easyLogin: false
+      }
+    },
+    mounted() {
+      if (window.localStorage.pushModel) {
+        this.pushModel = window.localStorage.pushModel === 'true';
+      } else {
+        window.localStorage.pushModel = false;
+        this.pushModel = window.localStorage.pushModel === 'true';
+      }
+
+      if (window.localStorage.easyLogin) {
+        this.easyLogin = window.localStorage.easyLogin === 'true';
+      } else {
+        window.localStorage.easyLogin = false;
+        this.easyLogin = window.localStorage.easyLogin === 'true';
       }
     },
     methods: {
@@ -40,6 +57,14 @@
       // 退出登录
       logoutApp() {
         this.$router.push({name: 'login'});
+      },
+
+      pushModelChange() {
+        window.localStorage.pushModel = this.pushModel;
+      },
+
+      easyLoginChange() {
+        window.localStorage.easyLogin = this.easyLogin;
       }
     }
   }

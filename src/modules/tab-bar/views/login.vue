@@ -18,9 +18,10 @@
       </hips-input>
     </div>
     <div class="login-button">
-      <hips-button type="primary" block ripple :disabled="!phone || !verificationCode" @click="loginApp">登录
+      <hips-button type="primary" block ripple :disabled="!phone || !verificationCode" @click="loginApp">登 录
       </hips-button>
     </div>
+    <div class="tips">Tips：点击获取验证码，开始模拟登陆！</div>
   </hips-view>
 </template>
 
@@ -115,7 +116,10 @@
       align-items: center;
       justify-content: center;
       img {
-        width 55%;
+        width: 35%;
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid #bbb;
       }
     }
     .login-input {
@@ -123,11 +127,34 @@
       margin: 0 5%;
       overflow: hidden;
       border-radius: 5px;
+      border: 1px solid #aaa;
+      box-shadow: inset 0 0 5px 5px #ccc;
+      >>> .hips-input .hips-icon {
+        font-size 22px;
+        font-weight: bold;
+        color: #777;
+      }
+      >>> .hips-input__input-value input {
+        color #000;
+      }
+      >>> .hips-button {
+        font-size 13px;
+      }
     }
     .login-button {
       width: 90%;
       margin: 0 5%;
       padding: 10% 0 0;
+      >>> .hips-button {
+        padding: 5px 0;
+      }
+    }
+    .tips {
+      width: 90%;
+      margin: 30px 5% 0;
+      font-size: 14px;
+      color: #f8f8f8;
+      text-align: center;
     }
   }
 </style>

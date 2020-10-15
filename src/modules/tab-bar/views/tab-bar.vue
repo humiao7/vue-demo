@@ -91,6 +91,13 @@
       };
     },
     methods: {},
+    beforeRouteEnter(to, from, next) {
+      next(vm => {
+        if (from.fullPath === "/login") {
+          vm.activeTab = 0;
+        }
+      });
+    }
   };
 
 </script>
