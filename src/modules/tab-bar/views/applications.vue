@@ -128,15 +128,34 @@
       },
       // 扫码二维码
       scanQrCode() {
-        this.$hips.dialog.alert({
-          title: '提示',
-          content: '相机调用失败，请前往移动端体验完整功能',
-          okText: '确定',
-          closable: false,
-          onOk() {
-            // on OK
-          },
-        });
+        if (window.cordova === undefined) {
+          this.$hips.dialog.alert({
+            title: '提示',
+            content: '相机调用失败，请前往移动端体验完整功能',
+            okText: '确定',
+            closable: false,
+            onOk() {
+              // on OK
+            },
+          });
+        } else {
+          window.cordova.plugins.barcodeScanner.scan((result) => {
+              this.$hips.dialog.alert({
+                title: '扫码结果',
+                content: result.text,
+                okText: '确定',
+                closable: false
+              });
+            }, (error) => {
+              this.$hips.dialog.alert({
+                title: '提示',
+                content: error,
+                okText: '确定',
+                closable: false
+              });
+            }
+          )
+        }
       }
     },
   };

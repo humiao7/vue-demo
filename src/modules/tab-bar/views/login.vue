@@ -81,7 +81,7 @@
                   this.verificationCode = this.randVerCode;
                 }
               });
-            }, 3000);
+            }, 1500);
           }
         }
       },
