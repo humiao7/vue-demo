@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6793470",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
       "icon_id": "1526413",
       "name": "图表-饼图",
       "font_class": "tubiao-bingtu",
@@ -18,13 +25,6 @@
       "font_class": "tubiaotongji",
       "unicode": "e66a",
       "unicode_decimal": 58986
-    },
-    {
-      "icon_id": "1881564",
-      "name": "K线图",
-      "font_class": "Kxiantu",
-      "unicode": "e666",
-      "unicode_decimal": 58982
     },
     {
       "icon_id": "1881571",

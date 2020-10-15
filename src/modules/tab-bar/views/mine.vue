@@ -1,7 +1,7 @@
 <template>
   <hips-view class="mine" :header-height="50" :footer-height="48" header-fixed content-frozen>
     <!--导航栏-->
-    <hips-nav-bar slot="header" title="我的" :right-buttons="[{buttonIcon: '',buttonLabel: '设置'}]"/>
+    <hips-nav-bar slot="header" title="我的" :right-buttons="[{buttonIcon: '',buttonLabel: '设置'}]"  @nav-bar-right-click="$router.push({name:'seting'})"/>
     <!--滚动部分-->
     <hips-scroll ref="scroll" :scroll-options="{}">
       <div class="my-information" @click="$router.push({name:'my-information'})">
