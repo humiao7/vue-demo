@@ -34,7 +34,7 @@ App功能预览.
 
 |                  登录界面                  |                主菜单界面                |
 | :----------------------------------------: | :--------------------------------------: |
-| <img src="./static/login.png" alt="Login"> | <img src="./static/main.png" alt="Main"> |
+| <img src="./static/login.png" width="300" alt="Login"> | <img src="./static/main.png" width="300" alt="Main"> |
 
 
 ## 文件结构
@@ -101,176 +101,18 @@ vue-demo/
 │  │  │  └─views
 │  │  │          calendar.vue
 │  │  │          
-│  │  ├─charts
-│  │  │  ├─api
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          charts.vue
-│  │  │          
-│  │  ├─files
-│  │  │  ├─api
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          files.vue
-│  │  │          
-│  │  ├─forms
-│  │  │  ├─api
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          forms.vue
-│  │  │          
-│  │  ├─lists
-│  │  │  ├─api
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          lists.vue
-│  │  │          
-│  │  ├─map
-│  │  │  ├─api
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─i18n
-│  │  │  │      en.js
-│  │  │  │      index.js
-│  │  │  │      zh.js
-│  │  │  │      
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─static
-│  │  │  │      head.svg
-│  │  │  │      robot.svg
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─style
-│  │  │  │      full-screen-map.styl
-│  │  │  │      
-│  │  │  └─views
-│  │  │          map.vue
-│  │  │          
-│  │  ├─notes
-│  │  │  ├─api
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          notes.vue
-│  │  │          
-│  │  ├─page-404
-│  │  │  ├─api
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          page-404.vue
-│  │  │          
-│  │  ├─payment
-│  │  │  ├─api
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─static
-│  │  │  │      zhifubao.svg
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          payment.vue
-│  │  │          
-│  │  ├─tab-bar
-│  │  │  ├─api
-│  │  │  │  │  index.js
-│  │  │  │  │  
-│  │  │  │  └─modules
-│  │  │  │          applicationsService.js
-│  │  │  │          
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─static
-│  │  │  │      home-fill.svg
-│  │  │  │      home.svg
-│  │  │  │      HUAWEI.jpg
-│  │  │  │      login.svg
-│  │  │  │      luffy.jpg
-│  │  │  │      MBP.png
-│  │  │  │      message-fill.svg
-│  │  │  │      message.svg
-│  │  │  │      mine-fill.svg
-│  │  │  │      mine.svg
-│  │  │  │      shopcar-fill.svg
-│  │  │  │      shopcar.svg
-│  │  │  │      user-header.jpg
-│  │  │  │      xiaoji.jpg
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          applications.vue
-│  │  │          login.vue
-│  │  │          message.vue
-│  │  │          mine.vue
-│  │  │          my-information.vue
-│  │  │          seting.vue
-│  │  │          shopcar.vue
-│  │  │          tab-bar.vue
-│  │  │          
-│  │  ├─tabs
-│  │  │  ├─api
-│  │  │  ├─i18n
-│  │  │  ├─router
-│  │  │  │      index.js
-│  │  │  │      
-│  │  │  ├─store
-│  │  │  ├─style
-│  │  │  └─views
-│  │  │          tabs.vue
-│  │  │          
-│  │  └─waterfall
-│  │      ├─api
-│  │      │      index.js
-│  │      │      
-│  │      ├─i18n
-│  │      ├─router
-│  │      │      index.js
-│  │      │      
-│  │      ├─store
-│  │      ├─style
-│  │      └─views
-│  │              waterfall.vue
-│  │              
+│  │  ├─charts       
+│  │  ├─files        
+│  │  ├─forms         
+│  │  ├─lists       
+│  │  ├─map         
+│  │  ├─notes      
+│  │  ├─page-404        
+│  │  ├─payment         
+│  │  ├─tab-bar         
+│  │  ├─tabs         
+│  │  └─waterfall  
+│  │  
 │  ├─router
 │  │      index.js
 │  │      
