@@ -1,24 +1,312 @@
-# 仿支付宝app前端项目
 
-> 基于 Vue2.0 开发，功能还在不断完善中。
+# Vue Demo
+
+vue-demo 是一个使用 vue-cli 搭建的移动端 web 项目，它是一个测试项目，用于提升并检验自己的移动前端开发能力与代码组织能力。该项目正在维护中，目前可体验版本为 [v0.0.1](https://humiao7.github.io/vue-demo.github.io/#/) ，在线预览请点击 [Demo](https://humiao7.github.io/vue-demo.github.io/#/)，App下载请点击 [vue-app](https://www.pgyer.com/DPPU)
+
+
+## 特点
+**此项目为纯前端 web 展示项目，除内部图片文件等链接外不包含任何网络接口请求**
+
+* 使用 [HipsUI](http://hippius-ui.hips.hand-china.com/#/zh-CN/quickstart) 完成主要功能界面开发
+* 包含表单、列表、交互、附件、日历、瀑布流等主要界面功能展示
+* 加入二维码、条形码动态生成功能
+* 加入 [Echarts](https://echarts.apache.org/zh/index.html) 可视化图表展示功能
+* 加入地图功能
+
+## 目录
+ - [如何开始](#如何开始)
+ - [App预览](#App预览)
+ - [文件结构](#文件结构)
+
 
 ## 如何开始
 
-``` bash
-# 安装依赖
-npm install
+* 请先安装本地 [Node](https://nodejs.org/en/) 环境，要求 node 版本不低于 8.0.0
+* 克隆地址: `git clone https://github.com/humiao7/vue-demo`
+* 安装 npm 依赖: `npm install`
+* 从指定源安装 hips ui: `npm i @hips/vue-ui -S --registry=http://nexus.saas.hand-china.com/repository/hzero-npm-group/`
+* 构建本地运行环境: `npm run dev`
+* 打包生产环境代码: `npm run build`
 
-# 安装 hips ui
-npm i @hips/vue-ui -S --registry=http://nexus.saas.hand-china.com/repository/hzero-npm-group/
+## App 预览
 
-# 本地 8080 端口启动服务
-npm run dev
+App功能预览.
 
-# 打包项目
-npm run build
+|                  登录界面                  |                主菜单界面                |
+| :----------------------------------------: | :--------------------------------------: |
+| <img src="./static/login.png" alt="Login"> | <img src="./static/main.png" alt="Main"> |
+
+
+## 文件结构
+
 ```
-
-## 立即体验
-[下载APP](https://www.pgyer.com/DPPU)   |   [在线体验](https://humiao7.github.io/vue-demo.github.io/#/login)
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+vue-demo/
+│  .gitignore
+│  index.html
+│  package.json
+│  README.md
+│  
+├─build
+│      build.js
+│      check-versions.js
+│      utils.js
+│      vue-loader.conf.js
+│      webpack.base.conf.js
+│      webpack.dev.conf.js
+│      webpack.prod.conf.js
+│      
+├─config
+│      dev.env.js
+│      index.js
+│      prod.env.js
+│      
+├─dist            
+├─node_modules                
+├─src
+│  │  App.vue
+│  │  main.js
+│  │  
+│  ├─api
+│  │  │  index.js
+│  │  │  
+│  │  └─modules
+│  │          halmFileGroupService.js
+│  │          
+│  ├─assets     
+│  │     
+│  ├─components
+│  │      halm-file-group.vue
+│  │      halm-task-line.vue
+│  │      index.js
+│  │      
+│  ├─modules
+│  │  ├─calendar
+│  │  │  ├─api
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─i18n
+│  │  │  │      en.js
+│  │  │  │      index.js
+│  │  │  │      zh.js
+│  │  │  │      
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─style
+│  │  │  │      calendar.styl
+│  │  │  │      
+│  │  │  └─views
+│  │  │          calendar.vue
+│  │  │          
+│  │  ├─charts
+│  │  │  ├─api
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          charts.vue
+│  │  │          
+│  │  ├─files
+│  │  │  ├─api
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          files.vue
+│  │  │          
+│  │  ├─forms
+│  │  │  ├─api
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          forms.vue
+│  │  │          
+│  │  ├─lists
+│  │  │  ├─api
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          lists.vue
+│  │  │          
+│  │  ├─map
+│  │  │  ├─api
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─i18n
+│  │  │  │      en.js
+│  │  │  │      index.js
+│  │  │  │      zh.js
+│  │  │  │      
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─static
+│  │  │  │      head.svg
+│  │  │  │      robot.svg
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─style
+│  │  │  │      full-screen-map.styl
+│  │  │  │      
+│  │  │  └─views
+│  │  │          map.vue
+│  │  │          
+│  │  ├─notes
+│  │  │  ├─api
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          notes.vue
+│  │  │          
+│  │  ├─page-404
+│  │  │  ├─api
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          page-404.vue
+│  │  │          
+│  │  ├─payment
+│  │  │  ├─api
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─static
+│  │  │  │      zhifubao.svg
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          payment.vue
+│  │  │          
+│  │  ├─tab-bar
+│  │  │  ├─api
+│  │  │  │  │  index.js
+│  │  │  │  │  
+│  │  │  │  └─modules
+│  │  │  │          applicationsService.js
+│  │  │  │          
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─static
+│  │  │  │      home-fill.svg
+│  │  │  │      home.svg
+│  │  │  │      HUAWEI.jpg
+│  │  │  │      login.svg
+│  │  │  │      luffy.jpg
+│  │  │  │      MBP.png
+│  │  │  │      message-fill.svg
+│  │  │  │      message.svg
+│  │  │  │      mine-fill.svg
+│  │  │  │      mine.svg
+│  │  │  │      shopcar-fill.svg
+│  │  │  │      shopcar.svg
+│  │  │  │      user-header.jpg
+│  │  │  │      xiaoji.jpg
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          applications.vue
+│  │  │          login.vue
+│  │  │          message.vue
+│  │  │          mine.vue
+│  │  │          my-information.vue
+│  │  │          seting.vue
+│  │  │          shopcar.vue
+│  │  │          tab-bar.vue
+│  │  │          
+│  │  ├─tabs
+│  │  │  ├─api
+│  │  │  ├─i18n
+│  │  │  ├─router
+│  │  │  │      index.js
+│  │  │  │      
+│  │  │  ├─store
+│  │  │  ├─style
+│  │  │  └─views
+│  │  │          tabs.vue
+│  │  │          
+│  │  └─waterfall
+│  │      ├─api
+│  │      │      index.js
+│  │      │      
+│  │      ├─i18n
+│  │      ├─router
+│  │      │      index.js
+│  │      │      
+│  │      ├─store
+│  │      ├─style
+│  │      └─views
+│  │              waterfall.vue
+│  │              
+│  ├─router
+│  │      index.js
+│  │      
+│  ├─style
+│  │  │  common.styl
+│  │  │  theme.styl
+│  │  │  
+│  │  ├─fsm-hzero-icons
+│  │  │  │  .bower.json
+│  │  │  │  README.md
+│  │  │  │  
+│  │  │  ├─css
+│  │  │  │      fsm-hzero-icons.css
+│  │  │  │      
+│  │  │  └─fonts
+│  │  │          icomoon.eot
+│  │  │          icomoon.svg
+│  │  │          icomoon.ttf
+│  │  │          icomoon.woff
+│  │  │          
+│  │  └─Iconfont
+│  │          demo.css
+│  │          demo_index.html
+│  │          iconfont.css
+│  │          iconfont.eot
+│  │          iconfont.js
+│  │          iconfont.json
+│  │          iconfont.svg
+│  │          iconfont.ttf
+│  │          iconfont.woff
+│  │          iconfont.woff2
+│  │          
+│  └─utils
+│          index.js
+│          
+└─static
+        login.png
+        main.png
+```
